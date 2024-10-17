@@ -1,0 +1,49 @@
+using System;
+
+namespace CapitalFrance
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            bool playagain = true;
+            while (playagain)
+            {
+                PlayGame();
+
+                string ans;
+                do
+                {
+                    Console.WriteLine("Do you want to play again? Yes / No");
+                    ans = Console.ReadLine().ToLower();
+                    if (ans == "yes")
+                    {
+                        playagain = true;
+                    }
+                    else if (ans == "no")
+                    {
+                        playagain = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please enter 'Yes' or 'No'.");
+                    }
+                } while (ans != "yes" && ans != "no");
+            }
+        }
+
+        static void PlayGame()
+        {
+            Console.WriteLine("What is the capital of France? ");
+            string answer = Console.ReadLine().ToLower();
+            if (answer == "paris")
+            {
+                Console.WriteLine("Correct!!!!!!!");
+            }
+            else
+            {
+                Console.WriteLine("Wrong!!!!!!!");
+            }
+        }
+    }
+}
