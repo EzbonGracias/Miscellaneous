@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.ExceptionServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BeforeClass
+{
+    internal class Calculator
+    {
+        static void Main(string[] args)
+        {
+            Calculator calculator = new Calculator();
+
+            while (true)
+            {
+                calculator.Testing();
+            }
+        }
+
+        public void Testing()
+        {
+            Console.WriteLine("Choose your first number: ");
+            int firstno = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Choose your operator (*, /, +, -): ");
+            char operators = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("Choose your second number: ");
+            int secondno = Convert.ToInt32(Console.ReadLine());
+
+            if (operators == '*')
+            {
+                Console.WriteLine(firstno * secondno);
+            }
+            else if (operators == '/')
+            {
+                Console.WriteLine(firstno / secondno);
+            }
+            else if (operators == '+')
+            {
+                Console.WriteLine(secondno + firstno);
+            }
+            else if (operators == '-')
+            {
+                Console.WriteLine(firstno - secondno);
+            }
+            else
+            {
+                Testing();
+            }
+            Console.WriteLine("Do you want to play again?:");
+            string answer = Console.ReadLine().ToLower();
+
+            if (answer == "yes")
+            {
+                
+            }
+            else if (answer == "no")
+            {
+                Console.WriteLine("Thank you for using the calculator, you need to go back to kindergarten");
+                Environment.Exit(1);
+            }
+            else
+            {
+                Console.WriteLine("Thank you for using the calculator, you need to go back to kindergarten");
+            }
+        }
+    }
+}
